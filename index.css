@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400");
+
+html {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+  color: black;
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 400;
+}
+
+#animatedBody {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.wrapper {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: pulse 3s infinite ease-in-out;
+  background: white;
+  padding: 32px;
+}
+
+::selection {
+  background: black;
+  color: white;
+}
+
+/*
+ * Title
+ */
+
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.title {
+  display: inline-block;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 300;
+}
+
+.title h1 {
+  letter-spacing: 16px;
+}
+
+.title em {
+  font-style: normal;
+}
+
+/*
+ * Home page
+ */
+
+.links {
+  font-size: 14px;
+  margin: 32px 0;
+  line-height: 300%;
+}
+
+.links a {
+  color: inherit;
+}
+
+/*
+ * Periphera
+ */
+
+canvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/*
+ * Mobile
+ */
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0;
+  }
+
+  .home {
+    font-size: 0.8em;
+  }
+
+  .projects-body {
+    flex-direction: column;
+  }
+
+  .projects-list {
+    width: 100%;
+  }
+
+  .project {
+    margin-top: 80px;
+    padding: 24px;
+  }
+}
