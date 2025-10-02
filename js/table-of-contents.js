@@ -72,39 +72,6 @@
     });
   }
 
-  // Handle floating TOC on scroll
-  function handleFloatingTOC(toc) {
-    // Store the original position before any transforms
-    const tocOriginalPosition = toc.offsetTop;
-    let isFloating = false;
-
-    function onScroll() {
-      const scrollPosition = window.pageYOffset;
-      const threshold = tocOriginalPosition + 200;
-
-      // When user scrolls past the threshold
-      if (scrollPosition > threshold && !isFloating) {
-        isFloating = true;
-        toc.classList.add('floating');
-        // Delay visibility for smooth transition
-        requestAnimationFrame(() => {
-          toc.classList.add('visible');
-        });
-      } else if (scrollPosition <= threshold && isFloating) {
-        isFloating = false;
-        toc.classList.remove('visible');
-        // Wait for fade out animation before removing floating
-        setTimeout(() => {
-          if (!isFloating) { // Check again to prevent race condition
-            toc.classList.remove('floating');
-          }
-        }, 400); // Match transition duration
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
   // Initialize
   function init() {
     const blogPost = document.querySelector('.blog-post');
@@ -135,9 +102,6 @@
     } else if (postDate && postDate.nextSibling) {
       postDate.parentNode.insertBefore(toc, postDate.nextSibling);
     }
-
-    // Enable floating TOC behavior
-    handleFloatingTOC(toc);
 
     // Update active section on scroll
     window.addEventListener('scroll', updateActiveSection, { passive: true });
