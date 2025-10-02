@@ -72,6 +72,31 @@
     });
   }
 
+  // Handle floating TOC on scroll
+  function handleFloatingTOC(toc) {
+    const tocOriginalPosition = toc.offsetTop;
+
+    function onScroll() {
+      const scrollPosition = window.pageYOffset;
+
+      // When user scrolls past the original TOC position
+      if (scrollPosition > tocOriginalPosition + 200) {
+        toc.classList.add('floating');
+        // Delay visibility for smooth transition
+        setTimeout(() => {
+          toc.classList.add('visible');
+        }, 50);
+      } else {
+        toc.classList.remove('visible');
+        setTimeout(() => {
+          toc.classList.remove('floating');
+        }, 400); // Match transition duration
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
   // Initialize
   function init() {
     const blogPost = document.querySelector('.blog-post');
@@ -102,6 +127,9 @@
     } else if (postDate && postDate.nextSibling) {
       postDate.parentNode.insertBefore(toc, postDate.nextSibling);
     }
+
+    // Enable floating TOC behavior
+    handleFloatingTOC(toc);
 
     // Update active section on scroll
     window.addEventListener('scroll', updateActiveSection, { passive: true });
