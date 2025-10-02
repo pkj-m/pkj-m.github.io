@@ -93,14 +93,14 @@
     // Create and insert TOC
     const toc = createTOC(headings);
 
-    // Insert TOC after post title and date
-    const postTitle = blogPost.querySelector('h2');
+    // Insert TOC after post tags (or date if no tags)
+    const postTags = blogPost.querySelector('.post-tags');
     const postDate = blogPost.querySelector('.post-date');
 
-    if (postDate && postDate.nextSibling) {
+    if (postTags && postTags.nextSibling) {
+      postTags.parentNode.insertBefore(toc, postTags.nextSibling);
+    } else if (postDate && postDate.nextSibling) {
       postDate.parentNode.insertBefore(toc, postDate.nextSibling);
-    } else if (postTitle && postTitle.nextSibling) {
-      postTitle.parentNode.insertBefore(toc, postTitle.nextSibling);
     }
 
     // Update active section on scroll

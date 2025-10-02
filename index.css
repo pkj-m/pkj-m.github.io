@@ -179,6 +179,43 @@ canvas::after {
   margin-top: 32px;
 }
 
+/* Tag filters */
+.tag-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.tag-filter {
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: inherit;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-filter:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.tag-filter.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+.tag-filter:focus-visible {
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+
 .blog-list {
   display: flex;
   flex-direction: column;
@@ -189,6 +226,10 @@ canvas::after {
   padding: 16px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.blog-item.hidden {
+  display: none;
 }
 
 .blog-item:last-child {
@@ -213,6 +254,30 @@ canvas::after {
 .post-date {
   opacity: 0.6;
   font-size: 12px;
+}
+
+/* Post tags */
+.post-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.blog-post .post-tags {
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .blog-post {

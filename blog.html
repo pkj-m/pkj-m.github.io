@@ -61,25 +61,46 @@
       </div>
 
       <div class="blog-content">
+        <!-- Tag filters -->
+        <div class="tag-filters">
+          <button class="tag-filter active" data-tag="all">All</button>
+          <button class="tag-filter" data-tag="startups">Startups</button>
+          <button class="tag-filter" data-tag="career">Career</button>
+          <button class="tag-filter" data-tag="tech">Tech</button>
+        </div>
+
         <div class="blog-list">
-          <div class="blog-item">
+          <div class="blog-item" data-tags="startups,funding">
             <a href="blog-yc.html">
               <p style="font-size: 14px; margin: 0;">Applying to Y Combinator and Getting In</p>
               <p class="post-date" style="font-size: 12px; margin: 4px 0 0 0;">October 2025 • 8 min read</p>
+              <div class="post-tags">
+                <span class="tag">Startups</span>
+                <span class="tag">Funding</span>
+              </div>
             </a>
           </div>
 
-          <div class="blog-item">
+          <div class="blog-item" data-tags="career,tech">
             <a href="blog-bigtech.html">
               <p style="font-size: 14px; margin: 0;">Working at Big Tech: The Uber Experience</p>
               <p class="post-date" style="font-size: 12px; margin: 4px 0 0 0;">September 2025 • 10 min read</p>
+              <div class="post-tags">
+                <span class="tag">Career</span>
+                <span class="tag">Tech</span>
+              </div>
             </a>
           </div>
 
-          <div class="blog-item">
+          <div class="blog-item" data-tags="tech,startups,career">
             <a href="blog-cities.html">
               <p style="font-size: 14px; margin: 0;">Bay Area vs Bangalore: A Tale of Two Tech Hubs</p>
               <p class="post-date" style="font-size: 12px; margin: 4px 0 0 0;">August 2025 • 12 min read</p>
+              <div class="post-tags">
+                <span class="tag">Tech</span>
+                <span class="tag">Startups</span>
+                <span class="tag">Career</span>
+              </div>
             </a>
           </div>
         </div>
@@ -98,5 +119,6 @@
     <script src="js/index.js"></script>
     <script src="js/page-transitions.js"></script>
     <script src="js/glitch-effects.js"></script>
+    <script src="js/blog-filter.js"></script>
   </body>
 </html>
