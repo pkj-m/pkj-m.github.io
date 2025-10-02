@@ -139,9 +139,28 @@ body.long-content {
   position: relative;
 }
 
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
 .links a:hover {
   opacity: 0.6;
   transform: translateY(-1px);
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+.links a:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .links a:focus-visible {
@@ -205,10 +224,27 @@ canvas::after {
   transform: translateY(-2px);
 }
 
+.tag-filter:active {
+  transform: translateY(0) scale(0.95);
+}
+
 .tag-filter.active {
   background: black;
   color: white;
   border-color: black;
+  animation: selectPulse 0.3s ease;
+}
+
+@keyframes selectPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .tag-filter:focus-visible {
@@ -372,6 +408,27 @@ canvas::after {
   border-left: 2px solid black;
   padding-left: 12px;
   margin-left: -14px;
+  position: relative;
+}
+
+.toc-link.active::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: black;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
 }
 
 .toc-link:focus-visible {
@@ -476,6 +533,10 @@ canvas::after {
   background: rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
   border-color: rgba(0, 0, 0, 0.4);
+}
+
+.share-button:active {
+  transform: translateY(0) scale(0.95);
 }
 
 .share-button:focus-visible {
@@ -640,11 +701,12 @@ canvas::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease, filter 0.3s ease;
 }
 
 .photo-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(0.95);
 }
 
 .photo-item img[loading="lazy"] {

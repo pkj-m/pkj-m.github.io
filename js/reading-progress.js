@@ -33,6 +33,17 @@
 
     // Update progress bar width
     progressBar.style.width = progress + '%';
+
+    // Color transitions based on progress
+    if (progress < 25) {
+      progressBar.style.background = 'black';
+    } else if (progress < 50) {
+      progressBar.style.background = 'rgba(0, 0, 0, 0.8)';
+    } else if (progress < 75) {
+      progressBar.style.background = 'rgba(0, 0, 0, 0.9)';
+    } else {
+      progressBar.style.background = 'black';
+    }
   }
 
   // Initialize

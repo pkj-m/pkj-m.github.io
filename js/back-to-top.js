@@ -38,6 +38,15 @@
       this.style.outline = '2px solid black';
       this.style.outlineOffset = '4px';
     });
+
+    // Add hover rotation effect
+    button.addEventListener('mouseenter', function() {
+      this.style.transform = 'rotate(-15deg) scale(1.1)';
+    });
+
+    button.addEventListener('mouseleave', function() {
+      this.style.transform = 'rotate(0deg) scale(1)';
+    });
     button.addEventListener('blur', function() {
       this.style.outline = 'none';
     });
