@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , />
+    <meta name="description" content="Page not found - Pankaj Mishra" />
+    <title>404 - Page Not Found</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pkj-m.github.io/404.html">
+    <meta property="og:title" content="404 - Page Not Found">
+    <meta property="og:description" content="This page doesn't exist. Maybe it never did.">
+    <meta property="og:site_name" content="Pankaj Mishra">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://pkj-m.github.io/404.html">
+    <meta property="twitter:title" content="404 - Page Not Found">
+    <meta property="twitter:description" content="This page doesn't exist. Maybe it never did.">
+    <meta property="twitter:site" content="@pkj__m">
+    <meta property="twitter:creator" content="@pkj__m">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="animate.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="glitch.css" />
+    <style>
+      .error-404 {
+        text-align: center;
+      }
+
+      .error-code {
+        font-size: 120px;
+        font-weight: 300;
+        margin: 0;
+        letter-spacing: 20px;
+        line-height: 1;
+      }
+
+      .error-message {
+        font-size: 18px;
+        margin: 32px 0;
+        opacity: 0.7;
+      }
+
+      .error-description {
+        font-size: 14px;
+        margin: 16px 0 48px 0;
+        opacity: 0.5;
+        line-height: 1.8;
+      }
+
+      .error-links {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .error-links a {
+        color: inherit;
+        text-decoration: none;
+        padding: 12px 24px;
+        border: 1px solid black;
+        transition: background 0.2s ease, color 0.2s ease;
+        font-size: 14px;
+      }
+
+      .error-links a:hover {
+        background: black;
+        color: white;
+      }
+
+      .error-links a:focus-visible {
+        outline: 2px solid black;
+        outline-offset: 4px;
+      }
+
+      @media (max-width: 768px) {
+        .error-code {
+          font-size: 80px;
+          letter-spacing: 12px;
+        }
+
+        .error-message {
+          font-size: 16px;
+        }
+
+        .error-description {
+          font-size: 13px;
+        }
+
+        .error-links {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .error-links a {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body class="animated fadeIn" id="animatedBody">
+    <div class="error-404 wrapper">
+      <div class="title">
+        <h1 class="error-code glitch" data-text="4ō4">404</h1>
+      </div>
+
+      <div class="error-message">Page Not Found</div>
+
+      <div class="error-description">
+        The page you're looking for doesn't exist.<br/>
+        It might have been moved, deleted, or never existed in the first place.
+      </div>
+
+      <div class="error-links">
+        <a href="index.html">Go Home</a>
+        <a href="blog.html">Read Blog</a>
+      </div>
+    </div>
+
+    <!-- thatonegraphanimation.tumblr.com -->
+    <canvas id="canvas"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="js/EasePack.min.js"></script>
+    <script src="js/rAF.js"></script>
+    <script src="js/connect3.js"></script>
+
+    <script src="js/ScrambleTextPlugin.js"></script>
+
+    <script src="js/index.js"></script>
+    <script src="js/page-transitions.js"></script>
+    <script src="js/glitch-effects.js"></script>
+  </body>
+</html>

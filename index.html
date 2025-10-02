@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" , />
+    <meta name="theme-color" content="#000000">
     <meta
       name="description"
-      content="Pankaj Mishra, software engineer at Uber"
+      content="Pankaj Mishra, Co-founder & CTO at Nivara. Former software engineer at Uber. Writing about startups, tech, and building products."
     />
-    <title></title>
+    <title>Pankaj Mishra</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pkj-m.github.io/">
+    <meta property="og:title" content="Pankaj Mishra">
+    <meta property="og:description" content="Co-founder & CTO at Nivara. Former software engineer at Uber. Writing about startups, tech, and building products.">
+    <meta property="og:site_name" content="Pankaj Mishra">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://pkj-m.github.io/">
+    <meta property="twitter:title" content="Pankaj Mishra">
+    <meta property="twitter:description" content="Co-founder & CTO at Nivara. Former software engineer at Uber. Writing about startups, tech, and building products.">
+    <meta property="twitter:site" content="@pkj__m">
+    <meta property="twitter:creator" content="@pkj__m">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pkj-m.github.io/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="animate.css" />
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link rel="stylesheet" type="text/css" href="glitch.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pankaj Mishra",
+      "url": "https://pkj-m.github.io/",
+      "jobTitle": "Co-founder & CTO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Nivara"
+      },
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Uber"
+      },
+      "sameAs": [
+        "https://github.com/pkj-m/",
+        "https://linkedin.com/in/pkj-m/",
+        "https://x.com/pkj__m"
+      ],
+      "description": "Co-founder & CTO at Nivara. Former software engineer at Uber. Writing about startups, tech, and building products."
+    }
+    </script>
   </head>
   <body class="animated fadeIn" id="animatedBody">
     <div class="home wrapper">
@@ -19,9 +67,14 @@
 
       <div class="links">
         Co-founder & CTO at <a href="https://getnivara.com" style="text-decoration: underline;">Nivara</a>. Passionate about the intersection of business and technology. <br/>
-        <a href="mailto:pankaj@getnivara.com">Email</a>
-        <a href="https://github.com/pkj-m/">GitHub</a>
-        <a href="https://linkedin.com/in/pkj-m/">LinkedIn</a>
+        <div class="links-row">
+          <div class="links-left">
+            <a href="blog.html">Blog</a> <a href="photos.html">Photos</a>
+          </div>
+          <div class="links-right">
+            <a href="mailto:pankaj@getnivara.com">Email</a> <a href="https://github.com/pkj-m/">GitHub</a> <a href="https://linkedin.com/in/pkj-m/">LinkedIn</a> <a href="https://x.com/pkj__m">X</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -35,6 +88,8 @@
     <script src="js/ScrambleTextPlugin.js"></script>
 
     <script src="js/index.js"></script>
+    <script src="js/page-transitions.js"></script>
+    <script src="js/glitch-effects.js"></script>
   </body>
 </html>
 

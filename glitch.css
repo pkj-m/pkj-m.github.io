@@ -1,6 +1,20 @@
 .glitch {
   color: black;
   position: relative;
+  display: inline-block;
+}
+
+/* Pause animations by default, activate on hover or via JS */
+.glitch:after,
+.glitch:before {
+  animation-play-state: paused;
+}
+
+.glitch:hover:after,
+.glitch:hover:before,
+.glitch.glitch-active:after,
+.glitch.glitch-active:before {
+  animation-play-state: running;
 }
 
 @keyframes noise-anim {
@@ -72,13 +86,13 @@
   content: attr(data-text);
   position: absolute;
   left: 2px;
-  text-shadow: -1px 0 black;
+  text-shadow: -1px 0 rgba(255, 0, 0, 0.3);
   top: 0;
   color: black;
   background: white;
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
-  animation: noise-anim 2s infinite linear alternate-reverse;
+  animation: noise-anim 2s infinite linear alternate-reverse, glitch-color 3s infinite;
 }
 
 @keyframes noise-anim-2 {
@@ -150,11 +164,30 @@
   content: attr(data-text);
   position: absolute;
   left: -2px;
-  text-shadow: 1px 0 black;
+  text-shadow: 1px 0 rgba(0, 255, 255, 0.3);
   top: 0;
   color: black;
   background: white;
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
-  animation: noise-anim-2 5s infinite linear alternate-reverse;
+  animation: noise-anim-2 5s infinite linear alternate-reverse, glitch-color-2 4s infinite;
+}
+
+/* Subtle color shift animations */
+@keyframes glitch-color {
+  0%, 100% {
+    text-shadow: -1px 0 rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: -1px 0 rgba(255, 0, 0, 0.5);
+  }
+}
+
+@keyframes glitch-color-2 {
+  0%, 100% {
+    text-shadow: 1px 0 rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 1px 0 rgba(0, 255, 255, 0.5);
+  }
 }
