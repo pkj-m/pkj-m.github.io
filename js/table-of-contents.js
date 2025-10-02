@@ -74,22 +74,30 @@
 
   // Handle floating TOC on scroll
   function handleFloatingTOC(toc) {
+    // Store the original position before any transforms
     const tocOriginalPosition = toc.offsetTop;
+    let isFloating = false;
 
     function onScroll() {
       const scrollPosition = window.pageYOffset;
+      const threshold = tocOriginalPosition + 200;
 
-      // When user scrolls past the original TOC position
-      if (scrollPosition > tocOriginalPosition + 200) {
+      // When user scrolls past the threshold
+      if (scrollPosition > threshold && !isFloating) {
+        isFloating = true;
         toc.classList.add('floating');
         // Delay visibility for smooth transition
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           toc.classList.add('visible');
-        }, 50);
-      } else {
+        });
+      } else if (scrollPosition <= threshold && isFloating) {
+        isFloating = false;
         toc.classList.remove('visible');
+        // Wait for fade out animation before removing floating
         setTimeout(() => {
-          toc.classList.remove('floating');
+          if (!isFloating) { // Check again to prevent race condition
+            toc.classList.remove('floating');
+          }
         }, 400); // Match transition duration
       }
     }
