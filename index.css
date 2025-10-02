@@ -437,6 +437,52 @@ canvas::after {
   cursor: default;
 }
 
+/* Social sharing buttons */
+.social-share {
+  display: flex;
+  gap: 12px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.social-share-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: inherit;
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.share-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.share-button:focus-visible {
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+
 /*
  * Mobile
  */
