@@ -14,7 +14,14 @@
     <button class="lightbox-nav next" aria-label="Next image">›</button>
     <div class="lightbox-content">
       <img class="lightbox-image" src="" alt="">
-      <div class="lightbox-caption"></div>
+      <div class="lightbox-info">
+        <div class="lightbox-caption"></div>
+        <div class="lightbox-metadata">
+          <span class="lightbox-date"></span>
+          <span class="lightbox-separator">•</span>
+          <span class="lightbox-location"></span>
+        </div>
+      </div>
     </div>
   `;
   document.body.appendChild(lightbox);
@@ -22,6 +29,8 @@
   // Get elements
   const lightboxImage = lightbox.querySelector('.lightbox-image');
   const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+  const lightboxDate = lightbox.querySelector('.lightbox-date');
+  const lightboxLocation = lightbox.querySelector('.lightbox-location');
   const closeBtn = lightbox.querySelector('.lightbox-close');
   const prevBtn = lightbox.querySelector('.lightbox-nav.prev');
   const nextBtn = lightbox.querySelector('.lightbox-nav.next');
@@ -38,7 +47,9 @@
       return {
         src: img.src,
         alt: img.alt,
-        caption: caption ? caption.textContent : ''
+        caption: caption ? caption.textContent : '',
+        date: item.dataset.date || '',
+        location: item.dataset.location || ''
       };
     });
 
@@ -70,6 +81,8 @@
     lightboxImage.src = image.src;
     lightboxImage.alt = image.alt;
     lightboxCaption.textContent = image.caption;
+    lightboxDate.textContent = image.date;
+    lightboxLocation.textContent = image.location;
 
     // Update nav buttons
     prevBtn.disabled = currentImageIndex === 0;
