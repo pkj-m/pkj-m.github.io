@@ -49,7 +49,7 @@ export default function MethodicalPost() {
               <h2 className="text-[28px] font-medium mb-2 tracking-[0.5px] max-md:text-[24px]">
                 Methodical: My Obsession with Order
               </h2>
-              <p className="opacity-60 text-xs mb-8 block">October 2025 • 6 min read</p>
+              <p className="opacity-60 text-xs mb-8 block">February 2025 • 6 min read</p>
               <div className="flex gap-2 mt-2 mb-6 flex-wrap">
                 <span className="text-[11px] px-[10px] py-1 bg-black/5 border border-black/10 inline-block uppercase tracking-[0.3px]">
                   Personal
