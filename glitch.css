@@ -1,5 +1,5 @@
 .glitch {
-  color: black;
+  color: var(--fg);
   position: relative;
   display: inline-block;
 }
@@ -88,8 +88,8 @@
   left: 2px;
   text-shadow: -1px 0 rgba(255, 0, 0, 0.3);
   top: 0;
-  color: black;
-  background: white;
+  color: var(--fg);
+  background: var(--bg);
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim 2s infinite linear alternate-reverse, glitch-color 3s infinite;
@@ -166,8 +166,8 @@
   left: -2px;
   text-shadow: 1px 0 rgba(0, 255, 255, 0.3);
   top: 0;
-  color: black;
-  background: white;
+  color: var(--fg);
+  background: var(--bg);
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 5s infinite linear alternate-reverse, glitch-color-2 4s infinite;

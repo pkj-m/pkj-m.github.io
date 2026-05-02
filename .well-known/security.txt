@@ -1,0 +1,8 @@
+# Security contact for Pankaj Mishra
+# https://pkj-m.github.io/
+
+Contact: mailto:hello@pankajmishra.dev
+Expires: 2027-05-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://pkj-m.github.io/.well-known/security.txt
+Policy: https://pkj-m.github.io/security.html

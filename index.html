@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" , />
     <meta name="theme-color" content="#000000">
+    <script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.className='dark'}catch(e){}})();</script>
     <meta
       name="description"
       content="Pankaj Mishra, Co-founder & CTO at Nivara. Former software engineer at Uber. Writing about startups, tech, and building products."
@@ -66,13 +67,14 @@
       </div>
 
       <div class="links">
-        Co-founder & CTO at <a href="https://getnivara.com" style="text-decoration: underline;">Nivara</a>. Passionate about the intersection of business and technology. <br/>
+        <span class="persona-light">Co-founder &amp; CTO at <a href="https://getnivara.com" style="text-decoration: underline;">Nivara</a>. Passionate about the intersection of business and technology.</span><span class="persona-dark">Independent security researcher. Ethical hacker. Findings, advisories, and disclosures.</span> <br/>
         <div class="links-row">
           <div class="links-left">
-            <a href="blog.html">Blog</a>
+            <span class="persona-light"><a href="blog.html">Blog</a></span>
+            <span class="persona-dark"><a href="security.html">Security</a></span>
           </div>
           <div class="links-right">
-            <a href="mailto:pankaj@getnivara.com">Email</a> <a href="https://github.com/pkj-m/">GitHub</a> <a href="https://linkedin.com/in/pkj-m/">LinkedIn</a> <a href="https://x.com/pkj__m">X</a>
+            <a href="mailto:hello@pankajmishra.dev">Email</a> <a href="https://github.com/pkj-m/">GitHub</a> <a href="https://linkedin.com/in/pkj-m/">LinkedIn</a> <a href="https://x.com/pkj__m">X</a>
           </div>
         </div>
       </div>
@@ -90,6 +92,7 @@
     <script src="js/index.js"></script>
     <script src="js/page-transitions.js"></script>
     <script src="js/glitch-effects.js"></script>
+    <script src="js/theme-toggle.js"></script>
   </body>
 </html>
 

@@ -6,7 +6,19 @@ function doStuff() {
     ctx,
     points,
     target,
-    animateGraph = true;
+    animateGraph = true,
+    canvasLineRGB = "0, 0, 0";
+
+  function refreshCanvasLineColor() {
+    try {
+      var v = getComputedStyle(document.documentElement)
+        .getPropertyValue("--canvas-line-rgb")
+        .trim();
+      if (v) canvasLineRGB = v;
+    } catch (e) {}
+  }
+  refreshCanvasLineColor();
+  window.addEventListener("themechange", refreshCanvasLineColor);
 
   // Main
   initHeader();
@@ -148,7 +160,7 @@ function doStuff() {
       ctx.beginPath();
       ctx.moveTo(p.x, p.y);
       ctx.lineTo(p.closest[i].x, p.closest[i].y);
-      ctx.strokeStyle = "rgba(0, 0, 0, " + p.active + ")";
+      ctx.strokeStyle = "rgba(" + canvasLineRGB + ", " + p.active + ")";
       ctx.stroke();
     }
   }
