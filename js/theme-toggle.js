@@ -70,9 +70,10 @@
     document.body.appendChild(btn);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  // Toggle hidden for now
+  // if (document.readyState === 'loading') {
+  //   document.addEventListener('DOMContentLoaded', init);
+  // } else {
+  //   init();
+  // }
 })();
